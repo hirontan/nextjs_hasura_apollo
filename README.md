@@ -12,18 +12,31 @@ https://hasura.io/cloud/
     - テーブルの作成は個人にお任せ
       - 例
         - users
-          - id（Primary Key）
-          - name
-          - created_at
-          - group_id
-          - profile_id
+          - Columns
+            - id（Primary Key）
+            - name
+            - created_at
+            - group_id
+            - profile_id
+          - Foreign Keys
+            - group_id → groups.id
+            - profile_id → profiles.id
         - groups
-          - id（Primary Key）
-          - name
+          - Columns
+            - id（Primary Key）
+            - name
         - profiles
-          - id（Primary Key）
-          - nickname
+          - Columns
+            - id（Primary Key）
+            - nickname
+          - Foreign Keys
+            - profile_id → profiles.id
+            - user_id → users.id
         - profile_users
-          - id（Primary Key）
-          - profile_id
-          - user_id
+          - Columns
+            - id（Primary Key）
+            - profile_id
+            - user_id
+          - Foreign Keys
+            - profile_id → profiles.id
+            - user_id → users.id
