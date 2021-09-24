@@ -40,3 +40,5 @@ https://hasura.io/cloud/
           - Foreign Keys
             - profile_id → profiles.id
             - user_id → users.id
+      - Relationships
+        - 参考: [Guides: Data modelling](https://hasura.io/docs/latest/graphql/core/guides/data-modelling/index.html)
