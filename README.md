@@ -1,11 +1,12 @@
 # nextjs_hasura_apollo
 
-## Hasuraの準備
+## 準備
 
-### URL
+### Hasura
+##### URL
 https://hasura.io/cloud/
 
-### 準備
+##### 準備
 1. プロジェクト作成
 2. `Env Vars`の`ADMIN SECRET`削除（そもそもない場合は、そのままでOK）
 3. コンソールの`Data`にて、`Create Heroku Database`を実行
@@ -42,3 +43,11 @@ https://hasura.io/cloud/
             - user_id → users.id
       - Relationships
         - 参考: [Guides: Data modelling](https://hasura.io/docs/latest/graphql/core/guides/data-modelling/index.html)
+
+
+### VS Code
+
+##### 拡張機能
+- [ES7](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
