@@ -10,6 +10,7 @@ export const GET_USERS = gql`
   }
 `
 
+// yarn gen-typesを行うときに、同じ名前のクエリがあるとエラーになる。事前にコメントアウトをして、yarn gen-typesを実行
 export const GET_USER_LOCAL = gql`
   query GetUsers {
     users(order_by: { created_at: desc }) @client {
