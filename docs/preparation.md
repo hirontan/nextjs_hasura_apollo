@@ -51,3 +51,12 @@ https://hasura.io/cloud/
 - [ES7](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+
+##### codegen
+- ファイルのコピー
+```
+cp codegen.template.yml codegen.yml
+```
+
+- `codegen.yml`のschemaをhasutaのURLに変更
