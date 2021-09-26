@@ -47,3 +47,13 @@ export const CREATE_USER = gql`
     }
   }
 `
+
+export const DELETE_USER = gql`
+  mutation DeleteUser($id: uuid!) {
+    delete_users_by_pk(id: $id) {
+      name
+      id
+      created_at
+    }
+  }
+`
