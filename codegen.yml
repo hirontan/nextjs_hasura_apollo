@@ -1,9 +1,0 @@
-overwrite: true
-schema: "" # hasuraのエンドポイント
-documents: "queries/**/*.ts"
-generates:
-  types/generated/graphql.tsx:
-    plugins:
-      - "typescript"
-      - "typescript-operations"
-      - "typescript-react-apollo"
