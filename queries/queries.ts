@@ -27,3 +27,13 @@ export const GET_USERIDS = gql`
     }
   }
 `
+
+export const GET_USERBY_ID = gql`
+  query GetUserById($id: uuid!) {
+    users_by_pk(id: $id) {
+      id
+      name
+      created_at
+    }
+  }
+`
