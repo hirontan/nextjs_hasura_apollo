@@ -37,3 +37,13 @@ export const GET_USERBY_ID = gql`
     }
   }
 `
+
+export const CREATE_USER = gql`
+  mutation CreateUser($name: String!) {
+    insert_users_one(object: { name: $name }) {
+      id
+      name
+      created_at
+    }
+  }
+`
