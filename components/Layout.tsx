@@ -7,3 +7,10 @@ interface Props {
   children: ReactNode
   title: string
 }
+
+export const Layout: VFC<Props> = ({
+  children,
+  title = 'Welcome to Nextjs'
+}) => {
+  return ()
+}
