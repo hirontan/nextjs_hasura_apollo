@@ -12,5 +12,11 @@ export const Layout: VFC<Props> = ({
   children,
   title = 'Welcome to Nextjs'
 }) => {
-  return (<div className="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono"></div>)
+  return (
+    <div className="flex flex-col justify-center items-center min-h-screen text-gray-600 text-sm font-mono">
+      <Head>
+        <title>{title}</title>
+      </Head>
+    </div>
+  )
 }
