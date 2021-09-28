@@ -73,6 +73,9 @@ export const Layout: VFC<Props> = ({
           </div>
         </nav>
       </header>
+      <main className="flex flex-1 flex-col justify-center items-center w-screen">
+        {children}
+      </main>
     </div>
   )
 }
