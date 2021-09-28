@@ -59,4 +59,4 @@ https://hasura.io/cloud/
 cp codegen.template.yml codegen.yml
 ```
 
-- `codegen.yml`のschemaをhasutaのURLに変更
+- `codegen.yml`のschemaをhasuraのURLに変更
