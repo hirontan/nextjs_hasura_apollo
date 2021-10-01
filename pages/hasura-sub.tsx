@@ -6,7 +6,9 @@ import { GetUsersQuery } from '../types/generated/graphql'
 import { Layout } from '../components/Layout'
 
 const FetchSub: VFC = () => {
-  const { data } = useQuery<GetUsersQuery>(GET_USERS)
+  const { data } = useQuery<GetUsersQuery>(GET_USERS, {
+    fetchPolicy: 'network-only'
+  })
   return (
     <Layout title="Hasura fetchPolicy read cache">
       <p className="mb-6 font-bold">Hasura main page</p>
@@ -18,7 +20,7 @@ const FetchSub: VFC = () => {
           </p>
         )
       })}
-      <Link href="/hasura^main">
+      <Link href="/hasura-main">
         <a className="mt-6">Back</a>
       </Link>
     </Layout>
