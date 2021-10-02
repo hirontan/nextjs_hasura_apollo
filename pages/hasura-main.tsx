@@ -8,10 +8,10 @@ import { Layout } from '../components/Layout'
 const FetchMain: VFC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     // 4つのfetchPolicy
-    fetchPolicy: 'network-only',
-    // fetchPolicy: 'cache-and-network',
-    // fetchPolicy: 'cache-first', // fetchPolicyのデフォルトは、cache-first
-    // fetchPolicy: 'no-cache',
+    // fetchPolicy: 'network-only', // 取得が終わったあとに、データが表示される
+    fetchPolicy: 'cache-and-network', // 前回までのキャッシュのデータを表示してくれる
+    // fetchPolicy: 'cache-first', // fetchPolicyのデフォルトは、cache-first（常にキャッシュを読みにいく）
+    // fetchPolicy: 'no-cache', // 毎回、fetchする
   })
   if (error)
     return (
