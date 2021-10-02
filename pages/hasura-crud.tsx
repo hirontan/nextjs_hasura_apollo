@@ -75,6 +75,7 @@ const HasuraCRUD: VFC = () => {
       setEditedUser({id: '', name: ''})
   }
 
+  if (error) return <Layout title="Hasura CRUD">Error: { error.message }</Layout>
   return (
     <Layout title="Hasura CRUD">
       <p className="mb-3 font-bold">Hasura CRUD</p>
