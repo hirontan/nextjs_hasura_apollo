@@ -19,6 +19,10 @@ const HasuraCRUD: VFC = () => {
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     fetchPolicy: 'cache-and-network'
   })
+
+  // Updateは自動的にキャッシュを更新してくれる
+  const [update_users_by_pk] = useMutation<UpdateUserMutation>(UPDATE_USER)
+
   return (
     <Layout title="Hasura CRUD">
       <p className="mb-3 font-bold">Hasura CRUD</p>
