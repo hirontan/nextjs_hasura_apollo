@@ -37,6 +37,19 @@ const HasuraCRUD: VFC = () => {
     }
   })
 
+  // Deleteは自動的にキャッシュを更新してくれない
+  const [delete_users_by_pk] = useMutation<DeleteUserMutation>(CREATE_USER, {
+    update(cache, { data: { delete_users_by_pk } }) {
+      cache.modify({
+        fields: {
+          users(existingUsers, { readField }) {
+            (user) => delete_users_by_pk.id !== readField('id', user)
+          }
+        }
+      })
+    }
+  })
+
   return (
     <Layout title="Hasura CRUD">
       <p className="mb-3 font-bold">Hasura CRUD</p>
