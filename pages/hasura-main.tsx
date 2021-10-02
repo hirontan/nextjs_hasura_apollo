@@ -10,7 +10,7 @@ const FetchMain: VFC = () => {
     // 4つのfetchPolicy
     fetchPolicy: 'network-only',
     // fetchPolicy: 'cache-and-network',
-    // fetchPolicy: 'cache-first',
+    // fetchPolicy: 'cache-first', // fetchPolicyのデフォルトは、cache-first
     // fetchPolicy: 'no-cache',
   })
   if (error)
