@@ -53,9 +53,32 @@ const HasuraCRUD: VFC = () => {
     }
   })
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (editedUser.id) {
+      try {
+        await update_users_by_pk({variables: {id: editedUser.id, name: editedUser.name}})
+      } catch (err) {
+        alert(err.message)
+      }
+      setEditedUser({id: '', name: ''})
+    } else {
+      try {
+          await insert_users_one({
+            variables: {
+            name: editedUser.name
+          }
+        })
+      } catch(err) {
+        alert(err.message)
+      }
+      setEditedUser({id: '', name: ''})
+  }
+
   return (
     <Layout title="Hasura CRUD">
       <p className="mb-3 font-bold">Hasura CRUD</p>
+      <form className="flex flex-col justify^center items-center" onSubmit={handleSubmit}></form>
     </Layout>
   )
 }
