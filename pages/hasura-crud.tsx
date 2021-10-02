@@ -16,6 +16,7 @@ import {
 import { Layout } from '../components/Layout'
 
 const HasuraCRUD: VFC = () => {
+  const [editedUser, setEditedUser] = useState({id: '', name: ''})
   const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
     fetchPolicy: 'cache-and-network'
   })
@@ -44,7 +45,7 @@ const HasuraCRUD: VFC = () => {
         fields: {
           users(existingUsers, { readField }) {
             return existingUsers.filter(
-              (user) => delete_users_by_pk.id !== readField('id', user) // filterを使って削除
+              (user) => delete_users_by_pk.id !== readField('id', user) // filterを使って削除。残ったデータのみ残す
             )
           }
         }
