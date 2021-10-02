@@ -43,7 +43,9 @@ const HasuraCRUD: VFC = () => {
       cache.modify({
         fields: {
           users(existingUsers, { readField }) {
-            (user) => delete_users_by_pk.id !== readField('id', user)
+            return existingUsers.filter(
+              (user) => delete_users_by_pk.id !== readField('id', user) // filterを使って削除
+            )
           }
         }
       })
