@@ -16,7 +16,14 @@ import {
 import { Layout } from '../components/Layout'
 
 const HasuraCRUD: VFC = () => {
-  return(<Layout title="Hasura CRUD"></Layout>)
+  const { data, error } = useQuery<GetUsersQuery>(GET_USERS, {
+    fetchPolicy: 'cache-and-network'
+  })
+  return (
+    <Layout title="Hasura CRUD">
+      <p className="mb-3 font-bold">Hasura CRUD</p>
+    </Layout>
+  )
 }
 
 export default HasuraCRUD
