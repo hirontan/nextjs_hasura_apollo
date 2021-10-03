@@ -11,3 +11,19 @@ import {
   Users,
 } from '../../types/generated/graphql'
 import { Layout } from '../../components/Layout'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const apolloClient = initializeApollo()
+  const { data } = await apolloClient.query<GetUserIdsQuery>({
+    query: GET_USERIDS,
+  })
+  const paths = data.users.map((user) => ({
+    params: {
+      id: user.id,
+    },
+  }))
+  return {
+    paths,
+    fallback: true,
+  }
+}
