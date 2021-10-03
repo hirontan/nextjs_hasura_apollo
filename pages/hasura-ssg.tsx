@@ -12,6 +12,15 @@ interface Props {
   } & Pick<Users, 'id' | 'name' | 'created_at'>)[]
 }
 
+const HasuraSSG: VFC<Props> = ({ users }) => {
+  return (
+    <Layout title="Hasura SSG">
+      <p className="mb-3 font-bold">SSG+ISR</p>
+    </Layout>
+  )
+}
+export default HasuraSSG
+
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
   const { data } = await apolloClient.query<GetUsersQuery>({
