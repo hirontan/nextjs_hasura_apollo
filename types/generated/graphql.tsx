@@ -13,7 +13,7 @@ export type Scalars = {
   Int: number;
   Float: number;
   timestamptz: any;
-  uuid: any;
+  uuid: string; // uuidがanyになっていたので、stringに設定し直す
 };
 
 /** Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'. */
