@@ -27,3 +27,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true,
   }
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const apolloClient = initializeApollo()
+  const { data } = await apolloClient.query<GetUserByIdQuery>({
+    query: GET_USERBY_ID,
+    variables: { id: params.id },
+  })
+  return {
+    props: {
+      user: data.users_by_pk,
+    },
+    revalidate: 1,
+  }
+}
