@@ -6,6 +6,12 @@ import { GET_USERS } from '../queries/queries'
 import { GetUsersQuery, Users } from '../types/generated/graphql'
 import { Layout } from '../components/Layout'
 
+interface Props {
+  users: ({
+    __typename?: 'users'
+  } & Pick<Users, 'id' | 'name' | 'created_at'>)[]
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
   const { data } = await apolloClient.query<GetUsersQuery>({
