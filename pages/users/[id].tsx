@@ -12,6 +12,17 @@ import {
 } from '../../types/generated/graphql'
 import { Layout } from '../../components/Layout'
 
+interface Props {
+  user: {
+    __typename?: 'users'
+  } & Pick<Users, 'id' | 'name' | 'created_at'>
+}
+
+const UserDetail: VFC<Props> = ({ user }) => {
+  return ()
+}
+export default UserDetail
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const apolloClient = initializeApollo()
   const { data } = await apolloClient.query<GetUserIdsQuery>({
