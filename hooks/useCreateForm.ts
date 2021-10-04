@@ -26,4 +26,8 @@ export const useCreateForm = () => {
   const usernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
   }
+
+  const printMessage = () => {
+    console.log('Hello')
+  }
 }
