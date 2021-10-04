@@ -22,4 +22,8 @@ export const useCreateForm = () => {
   const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value)
   }
+
+  const usernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value)
+  }
 }
