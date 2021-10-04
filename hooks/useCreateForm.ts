@@ -44,4 +44,13 @@ export const useCreateForm = () => {
     }
     setUsername('')
   }
+
+  return {
+    text,
+    handleSubmit,
+    username,
+    usernameChange,
+    printMessage,
+    handleTextChange,
+  }
 }
