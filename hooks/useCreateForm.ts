@@ -30,4 +30,18 @@ export const useCreateForm = () => {
   const printMessage = () => {
     console.log('Hello')
   }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    try {
+      await insert_users_one({
+        variables: {
+          name: username,
+        },
+      })
+    } catch (err) {
+      alert(err.message)
+    }
+    setUsername('')
+  }
 }
