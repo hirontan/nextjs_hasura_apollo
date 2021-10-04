@@ -24,6 +24,25 @@ export const CreateUser: VFC = () => {
           onChange={handleTextChange}
         />
       </div>
+      <form
+        className="flex flex-col justify-center items-center "
+        onSubmit={handleSubmit}
+      >
+        <label>Username</label>
+        <input
+          className="mb-3 px-3 py-2 border border-gray-300"
+          placeholder="New user ?"
+          type="text"
+          value={username}
+          onChange={usernameChange}
+        />
+        <button
+          className="my-3 py-1 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded-2xl focus:outline-none"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
     </>
   )
 }
