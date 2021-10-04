@@ -18,4 +18,8 @@ export const useCreateForm = () => {
       })
     },
   })
+
+  const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value)
+  }
 }
