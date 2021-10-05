@@ -19,13 +19,13 @@ export const useCreateForm = () => {
     },
   })
 
-  const handleTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value)
-  }
+  }, [])
 
-  const usernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const usernameChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value)
-  }
+  }, [])
 
   const printMessage = useCallback(() => {
     console.log('Hello')
