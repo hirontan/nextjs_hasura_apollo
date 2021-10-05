@@ -31,19 +31,22 @@ export const useCreateForm = () => {
     console.log('Hello')
   }, [])
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    try {
-      await insert_users_one({
-        variables: {
-          name: username,
-        },
-      })
-    } catch (err) {
-      alert(err.message)
-    }
-    setUsername('')
-  }
+  const handleSubmit = useCallback(
+    async (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      try {
+        await insert_users_one({
+          variables: {
+            name: username,
+          },
+        })
+      } catch (err) {
+        alert(err.message)
+      }
+      setUsername('')
+    },
+    [username]
+  )
 
   return {
     text,
