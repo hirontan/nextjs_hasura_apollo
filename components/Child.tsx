@@ -2,10 +2,11 @@ import { ChangeEvent, FormEvent, memo, VFC } from 'react'
 
 interface Props {
   printMessage: () => void
-  // handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>
+  handleSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>
 }
 
-export const Child: VFC<Props> = memo(({ printMessage }) => {
+// handleSubmitを渡して、再レンダリングがされること確認
+export const Child: VFC<Props> = memo(({ printMessage, handleSubmit }) => {
   return (
     <>
       {console.log('Child rendered')}
