@@ -26,18 +26,18 @@ const HasuraCRUD: VFC = () => {
   const [update_users_by_pk] = useMutation<UpdateUserMutation>(UPDATE_USER)
 
   // Createは自動的にキャッシュを更新してくれない
-  // const [insert_users_one] = useMutation<CreateUserMutation>(CREATE_USER, {
-  //   update(cache, { data: { insert_users_one } }) {
-  //     const cacheId = cache.identify(insert_users_one) // cacheのIDを取得できる
-  //     cache.modify({
-  //       fields: {
-  //         users(existingUsers, { toReference }) {
-  //           return [toReference(cacheId, ...existingUsers)] // 配列の先頭にデータを追加する
-  //         }
-  //       }
-  //     })
-  //   }
-  // })
+  const [insert_users_one] = useMutation<CreateUserMutation>(CREATE_USER, {
+    update(cache, { data: { insert_users_one } }) {
+      const cacheId = cache.identify(insert_users_one) // cacheのIDを取得できる
+      cache.modify({
+        fields: {
+          users(existingUsers, { toReference }) {
+            return [toReference(cacheId, ...existingUsers)] // 配列の先頭にデータを追加する
+          }
+        }
+      })
+    }
+  })
 
   // Deleteは自動的にキャッシュを更新してくれない
   const [delete_users_by_pk] = useMutation<DeleteUserMutation>(DELETE_USER, {
