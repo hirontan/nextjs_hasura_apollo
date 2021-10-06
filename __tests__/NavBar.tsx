@@ -32,5 +32,7 @@ describe('Navigation Test Cases', () => {
     // 構成用要素を取得
     render(page)
     expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('makevar-nav'))
+    expect(await screen.findByText('makeVar')).toBeInTheDocument()
   })
 })
