@@ -20,3 +20,5 @@ export const Child: VFC<Props> = memo(({ printMessage, handleSubmit }) => {
     </>
   )
 })
+
+Child.displayName = 'Child'
