@@ -40,5 +40,11 @@ describe('Navigation Test Cases', () => {
     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
     userEvent.click(screen.getByTestId('ssg-nav'))
     expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('memo-nav'))
+    expect(
+      await screen.findByText('Custom Hook + useCallback + memo')
+    ).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('home-nav'))
+    expect(await screen.findByText('Next.js + GraphQL')).toBeInTheDocument()
   })
 })
