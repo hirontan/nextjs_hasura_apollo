@@ -9,3 +9,5 @@ import { handlers } from '../mock/handlers'
 import 'setimmediate'
 
 initTestHelpers()
+
+const server = setupServer(...handlers)
