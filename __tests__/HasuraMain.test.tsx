@@ -5,3 +5,16 @@ import { getPage, initTestHelpers } from 'next-page-tester'
 import { handlers } from '../mocks/handlers'
 
 initTestHelpers()
+
+const server = setupServer(...handlers)
+
+beforeAll(() => {
+  server.listen()
+})
+afterEach(() => {
+  server.resetHandlers()
+  cleanup()
+})
+afterAll(() => {
+  server.close()
+})
