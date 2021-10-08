@@ -18,3 +18,16 @@ afterEach(() => {
 afterAll(() => {
   server.close()
 })
+
+describe('Hasura Fetch Test Cases', () => {
+  it('Should render the list of users by useQuery', async () => {
+    const { page } = await getPage({
+      route: '/hasura-main',
+    })
+    render(page)
+    expect(await screen.findByText('Hasura main page')).toBeInTheDocument()
+    expect(await screen.findByText('Test user A')).toBeInTheDocument()
+    expect(screen.getByText('Test user B')).toBeInTheDocument()
+    expect(screen.getByText('Test user C')).toBeInTheDocument()
+  })
+})
