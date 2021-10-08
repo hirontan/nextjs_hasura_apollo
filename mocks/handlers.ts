@@ -13,7 +13,7 @@ export const handlers = [
           },
           {
             __typename: 'users',
-            id: 'bbbb1111-bb11-bb11-aa11-bbbbbb111111',
+            id: 'bbbb1111-bb11-bb11-bb11-bbbbbb111111',
             name: 'Test user B',
             created_at: '2021-10-06T00:00:00.000000+00:00',
           },
@@ -29,7 +29,7 @@ export const handlers = [
   }),
   graphql.query('GetUserById', (req, res, ctx) => {
     const { id } = req.variables
-    if (id === 'aaaa1111-aa11-aa11-aa11-aaaaaa1111113') {
+    if (id === 'aaaa1111-aa11-aa11-aa11-aaaaaa111111') {
       return res(
         ctx.data({
           users_by_pk: {
@@ -41,12 +41,12 @@ export const handlers = [
         })
       )
     }
-    if (id === 'bbbb1111-bb11-bb11-aa11-bbbbbb111111') {
+    if (id === 'bbbb1111-bb11-bb11-11-bbbbbb111111') {
       return res(
         ctx.data({
           users_by_pk: {
             __typename: 'users',
-            id: 'bbbb1111-bb11-bb11-aa11-bbbbbb111111',
+            id: 'bbbb1111-bb11-bb11-bb11-bbbbbb111111',
             name: 'Test user B',
             created_at: '2021-10-06T00:00:00.000000+00:00',
           },
