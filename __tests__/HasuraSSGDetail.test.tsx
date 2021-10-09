@@ -19,3 +19,12 @@ afterEach(() => {
 afterAll(() => {
   server.close()
 })
+
+describe('UserDetail Test Cases', () => {
+  it('Should render the user detail pre-fetched by getStaticProps', async () => {
+    const { page } = await getPage({
+      route: '/users/aaaa1111-aa11-aa11-aa11-aaaaaa111111',
+    })
+    render(page)
+  })
+})
