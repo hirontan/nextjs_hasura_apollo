@@ -27,5 +27,6 @@ describe('UserDetail Test Cases', () => {
     })
     render(page)
     expect(await screen.findByText('User detail')).toBeInTheDocument()
+    expect(screen.getByText('Test user A')).toBeInTheDocument()
   })
 })
