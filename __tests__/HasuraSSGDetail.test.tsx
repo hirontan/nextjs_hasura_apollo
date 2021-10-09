@@ -31,5 +31,8 @@ describe('UserDetail Test Cases', () => {
     expect(
       screen.getByText('2021-10-06T00:00:00.000000+00:00')
     ).toBeInTheDocument()
+
+    userEvent.click(screen.getByTestId('back-to-main'))
+    expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
   })
 })
