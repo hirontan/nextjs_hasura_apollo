@@ -34,5 +34,15 @@ describe('UserDetail Test Cases', () => {
 
     userEvent.click(screen.getByTestId('back-to-main'))
     expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
+
+    // Test User B（後ほど修正）
+    // userEvent.click(
+    //   await screen.getByTestId('link-bbbb1111-bb11-bb11-bb11-bbbbbb111111')
+    // )
+    // expect(await screen.findByText('User detail')).toBeInTheDocument()
+    // expect(await screen.findByText('Test user B')).toBeInTheDocument()
+    // expect(
+    //   screen.getByText('2021-10-06T00:00:00.000000+00:01')
+    // ).toBeInTheDocument()
   })
 })
