@@ -26,5 +26,6 @@ describe('UserDetail Test Cases', () => {
       route: '/users/aaaa1111-aa11-aa11-aa11-aaaaaa111111',
     })
     render(page)
+    expect(await screen.findByText('User detail')).toBeInTheDocument()
   })
 })
