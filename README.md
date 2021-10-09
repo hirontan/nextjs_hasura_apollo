@@ -6,8 +6,11 @@ First, run the development server:
 
 ```bash
 yarn install
+cp .env.template .env.local
+cp .env.template .env.test.local
 yarn dev
 ```
+※ `.env.local`と`.env.test.local`にHasuraで利用しているURLやKEYを設定してください
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
