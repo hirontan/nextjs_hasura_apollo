@@ -25,5 +25,6 @@ describe('Hasura CRUD Test Cases', () => {
       route: '/hasura-crud',
     })
     render(page)
+    expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
   })
 })
