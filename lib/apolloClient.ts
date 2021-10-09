@@ -10,7 +10,9 @@ import 'cross-fetch/polyfill'
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 
 const createApolloClient = () => {
-  let url = process.env.APOLLO_URL ? process.env.APOLLO_URL : 'http://localhost'
+  let url = process.env.APOLLO_URL
+    ? process.env.APOLLO_URL
+    : 'http://localhost:3000'
   return new ApolloClient({
     ssrMode: typeof window === 'undefined', // window ブラウザで実行している
     link: new HttpLink({ uri: url }),

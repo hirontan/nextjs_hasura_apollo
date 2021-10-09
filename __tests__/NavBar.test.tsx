@@ -41,9 +41,8 @@ describe('Navigation Test Cases', () => {
 
     userEvent.click(screen.getByTestId('crud-nav'))
     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
-    // テスト通らなかったので、後で修正
-    // userEvent.click(screen.getByTestId('ssg-nav'))
-    // expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
+    userEvent.click(screen.getByTestId('ssg-nav'))
+    expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
     userEvent.click(screen.getByTestId('memo-nav'))
     expect(
       await screen.findByText('Custom Hook + useCallback + memo')

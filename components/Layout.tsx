@@ -58,7 +58,7 @@ export const Layout: VFC<Props> = ({
                   data-testid="ssg-nav"
                   className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
-                  SSG+ISR(Hasura)
+                  SSG + ISR(Hasura)
                 </a>
               </Link>
               <Link href="/hooks-memo">
