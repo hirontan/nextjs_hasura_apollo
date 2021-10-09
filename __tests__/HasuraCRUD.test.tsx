@@ -30,5 +30,8 @@ describe('Hasura CRUD Test Cases', () => {
     expect(
       screen.getByText('2021-10-06T00:00:00.000000+00:00')
     ).toBeInTheDocument()
+    expect(
+      screen.getByTestId('edit-aaaa1111-aa11-aa11-aa11-aaaaaa111111')
+    ).toBeTruthy()
   })
 })
