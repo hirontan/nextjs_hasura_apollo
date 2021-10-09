@@ -15,13 +15,13 @@ export const handlers = [
             __typename: 'users',
             id: 'bbbb1111-bb11-bb11-bb11-bbbbbb111111',
             name: 'Test user B',
-            created_at: '2021-10-06T00:00:00.000000+00:00',
+            created_at: '2021-10-06T00:00:00.000000+00:01',
           },
           {
             __typename: 'users',
             id: 'cccc1111-cc11-cc11-cc11-ccccccc111111',
             name: 'Test user C',
-            created_at: '2021-10-06T00:00:00.000000+00:00',
+            created_at: '2021-10-06T00:00:00.000000+00:02',
           },
         ],
       })
@@ -48,7 +48,7 @@ export const handlers = [
             __typename: 'users',
             id: 'bbbb1111-bb11-bb11-bb11-bbbbbb111111',
             name: 'Test user B',
-            created_at: '2021-10-06T00:00:00.000000+00:00',
+            created_at: '2021-10-06T00:00:00.000000+00:01',
           },
         })
       )
@@ -60,7 +60,7 @@ export const handlers = [
             __typename: 'users',
             id: 'cccc1111-cc11-cc11-cc11-ccccccc111111',
             name: 'Test user C',
-            created_at: '2021-10-06T00:00:00.000000+00:00',
+            created_at: '2021-10-06T00:00:00.000000+00:02',
           },
         })
       )
