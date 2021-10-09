@@ -18,3 +18,7 @@ afterEach(() => {
 afterAll(() => {
   server.close()
 })
+
+describe('Hasura CRUD Test Cases', () => {
+
+})
