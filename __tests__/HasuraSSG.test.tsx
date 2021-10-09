@@ -26,5 +26,8 @@ describe('SSG Test Cases', () => {
     })
     render(page)
     expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
+    expect(screen.getByText('Test user A')).toBeInTheDocument()
+    expect(screen.getByText('Test user B')).toBeInTheDocument()
+    expect(screen.getByText('Test user C')).toBeInTheDocument()
   })
 })
