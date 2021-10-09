@@ -7,3 +7,15 @@ import { handlers } from '../mocks/handlers'
 import 'setimmediate'
 
 initTestHelpers()
+
+const server = setupServer(...handlers)
+beforeAll(() => {
+  server.listen()
+})
+afterEach(() => {
+  server.resetHandlers()
+  cleanup()
+})
+afterAll(() => {
+  server.close()
+})
