@@ -26,6 +26,8 @@ describe('Hasura CRUD Test Cases', () => {
     })
     render(page)
     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
+
+    // Test user A
     expect(await screen.findByText('Test user A')).toBeInTheDocument()
     expect(
       screen.getByText('2021-10-06T00:00:00.000000+00:00')
@@ -35,6 +37,18 @@ describe('Hasura CRUD Test Cases', () => {
     ).toBeTruthy()
     expect(
       screen.getByTestId('delete-aaaa1111-aa11-aa11-aa11-aaaaaa111111')
+    ).toBeTruthy()
+
+    // Test user B
+    expect(await screen.findByText('Test user B')).toBeInTheDocument()
+    expect(
+      screen.getByText('2021-10-06T00:00:00.000000+00:01')
+    ).toBeInTheDocument()
+    expect(
+      screen.getByTestId('edit-bbbb1111-bb11-bb11-bb11-bbbbbb111111')
+    ).toBeTruthy()
+    expect(
+      screen.getByTestId('delete-bbbb1111-bb11-bb11-bb11-bbbbbb111111')
     ).toBeTruthy()
   })
 })
