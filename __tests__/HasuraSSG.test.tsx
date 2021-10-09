@@ -18,3 +18,12 @@ afterEach(() => {
 afterAll(() => {
   server.close()
 })
+
+describe('SSG Test Cases', () => {
+  it('Should render the list of users pre-fetched by getStaticProps', async () => {
+    const { page } = await getPage({
+      route: '/hasura-ssg',
+    })
+    render(page)
+  })
+})
