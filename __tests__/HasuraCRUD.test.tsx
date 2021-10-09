@@ -26,5 +26,6 @@ describe('Hasura CRUD Test Cases', () => {
     })
     render(page)
     expect(await screen.findByText('Hasura CRUD')).toBeInTheDocument()
+    expect(await screen.findByText('Test user A')).toBeInTheDocument()
   })
 })
