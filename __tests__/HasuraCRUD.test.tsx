@@ -33,5 +33,8 @@ describe('Hasura CRUD Test Cases', () => {
     expect(
       screen.getByTestId('edit-aaaa1111-aa11-aa11-aa11-aaaaaa111111')
     ).toBeTruthy()
+    expect(
+      screen.getByTestId('delete-aaaa1111-aa11-aa11-aa11-aaaaaa111111')
+    ).toBeTruthy()
   })
 })
