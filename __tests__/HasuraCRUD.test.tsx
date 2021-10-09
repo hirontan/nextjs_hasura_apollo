@@ -20,5 +20,10 @@ afterAll(() => {
 })
 
 describe('Hasura CRUD Test Cases', () => {
-
+  it('Should render the list of users by useQuery', async () => {
+    const { page } = await getPage({
+      route: '/hasura-crud',
+    })
+    render(page)
+  })
 })
