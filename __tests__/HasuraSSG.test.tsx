@@ -25,5 +25,6 @@ describe('SSG Test Cases', () => {
       route: '/hasura-ssg',
     })
     render(page)
+    expect(await screen.findByText('SSG+ISR')).toBeInTheDocument()
   })
 })
